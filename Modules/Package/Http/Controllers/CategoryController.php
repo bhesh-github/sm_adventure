@@ -43,10 +43,18 @@ class CategoryController extends Controller
         ]);
 
         $slug = Str::slug($request->name);
+        $imageName='';
+        if ($request->image) {
+            $filename = $request->image->getClientOriginalName();
+            $imageName = time().$filename;
+
+            $request->image->move(public_path('upload/images/category'), $imageName);
+        }
         Category::create([
             'name' => $request->name,
             'slug' => $slug,
             'parent_id' => $request->parent,
+            'image' => $imageName
         ]);
 
         return back()->with('success','Created Successfully.');
@@ -82,10 +90,24 @@ class CategoryController extends Controller
     { 
         $category = Category::findorfail($id);
         $slug = Str::slug($request->name);
+        if($request->remove){
+            $imageName="";
+        }
+        else{
+            $imageName=$category->image;
+        }
+        
+        if ($request->image) {
+            $filename = $request->image->getClientOriginalName();
+            $imageName = time().$filename;
+
+            $request->image->move(public_path('upload/images/category'), $imageName);
+        }
         $category->update([
             'name' => $request->name,
             'slug' => $slug,
             'parent_id' => $request->parent,
+            'image' => $imageName
         ]);
 
         return back()->with('success','Created Successfully.');

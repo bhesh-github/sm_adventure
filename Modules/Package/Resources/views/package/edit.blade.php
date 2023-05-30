@@ -60,7 +60,13 @@
                                                 <select name="category" id="category" class="form-control">
                                                     <option value="" disabled>Select Category</option>
                                                     @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}" {{ ($category->id==$package->category_id)?'selected':'' }}>{{ $category->name }}</option>
+                                                    <optgroup label="{{ $category->name }}">
+                                                        @foreach ($category->subcategories as $sub)
+                                                            <option value="{{ $sub->id }}"
+                                                                {{ $sub->id == $package->category_id ? 'selected' : '' }}>
+                                                                {{ $sub->name }}</option>
+                                                        @endforeach
+                                                    </optgroup>
                                                     @endforeach
                                                 </select>
                                                 @error('category')

@@ -37,6 +37,7 @@
                                 <thead>
                                     <tr>
                                         <th>S.N</th>
+                                        <th>Image</th>
                                         <th>Name</th>
                                         <th>Sub Categories</th>
                                         <th class="text-center">Status</th>
@@ -47,12 +48,17 @@
                                     @foreach ($categories as $key => $value)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+                                            <td>
+                                                <img src="{{ asset('upload/images/category/' . $value->image) }}"
+                                                    width="100px">
+                                            </td>
                                             <td>{{ $value->name }}</td>
                                             <td>
                                                 @if ($value->subcategories->count() > 0)
                                                     <table>
                                                         <thead>
                                                             <th>SN</th>
+                                                            <th>Image</th>
                                                             <th>Name</th>
                                                             <th>Status</th>
                                                             <th>Action</th>
@@ -61,6 +67,10 @@
                                                             @forelse ($value->subcategories as $sub)
                                                                 <tr>
                                                                     <td>{{ $loop->iteration }}</td>
+                                                                    <td>
+                                                                        <img src="{{ asset('upload/images/category/' . $sub->image) }}"
+                                                                            width="100px">
+                                                                    </td>
                                                                     <td>{{ $sub->name }}</td>
                                                                     <td class="text-center">
                                                                         @if ($sub->status == 'on')
@@ -135,6 +145,41 @@
                                                                                                         <div
                                                                                                             class="form-group">
                                                                                                             <label
+                                                                                                                for="image">Image</label>
+                                                                                                            <input
+                                                                                                                type="file"
+                                                                                                                id="file-ip-1"
+                                                                                                                accept="image/*"
+                                                                                                                class="form-control"
+                                                                                                                value="{{ old('image') }}"
+                                                                                                                onchange="showPreview2{{ $sub->id }}(event);"
+                                                                                                                name="image">
+                                                                                                            @error('image')
+                                                                                                                <p
+                                                                                                                    style="color: red">
+                                                                                                                    {{ $message }}
+                                                                                                                </p>
+                                                                                                            @enderror
+                                                                                                            <div class="preview mt-2"
+                                                                                                                style="display:flex;">
+                                                                                                                <img src="{{ asset('upload/images/category/' . $sub->image) }}"
+                                                                                                                    width="100px"
+                                                                                                                    class="mr-2">
+                                                                                                                <img src=""
+                                                                                                                    id="file-ip-{{ $sub->id }}-preview2"
+                                                                                                                    width="100px">
+                                                                                                            </div>
+                                                                                                            <input
+                                                                                                                type="checkbox"
+                                                                                                                name="remove">
+                                                                                                            <label
+                                                                                                                for="Remove">Remove</label>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-12">
+                                                                                                        <div
+                                                                                                            class="form-group">
+                                                                                                            <label
                                                                                                                 for="parent">Parent
                                                                                                                 Category</label>
                                                                                                             <select
@@ -180,17 +225,18 @@
                                                                         </div>
 
 
-                                                                        <button id="delete" class="btn btn-danger btn-sm"
+                                                                        <button id="delete"
+                                                                            class="btn btn-danger btn-sm"
                                                                             onclick="
                                                                 event.preventDefault();
                                                                 if (confirm('Are you sure? It will delete the data permanently!')) {
-                                                                    document.getElementById('destroy{{ $value->id }}').submit()
+                                                                    document.getElementById('destroy{{ $sub->id }}').submit()
                                                                 }
                                                                 ">
                                                                             <i class="fa fa-trash"></i>
-                                                                            <form id="destroy{{ $value->id }}"
+                                                                            <form id="destroy{{ $sub->id }}"
                                                                                 class="d-none"
-                                                                                action="{{ route('category.destroy', $value->id) }}"
+                                                                                action="{{ route('category.destroy', $sub->id) }}"
                                                                                 method="POST">
                                                                                 @csrf
                                                                                 @method('delete')
@@ -226,8 +272,9 @@
                                                 </button>
 
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="category{{ $loop->iteration }}" tabindex="-1"
-                                                    role="dialog" aria-labelledby="categoryLabel" aria-hidden="true">
+                                                <div class="modal fade" id="category{{ $loop->iteration }}"
+                                                    tabindex="-1" role="dialog" aria-labelledby="categoryLabel"
+                                                    aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -240,8 +287,8 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 <form id="product-form"
-                                                                    action="{{ route('category.update',$value->id) }}" method="POST"
-                                                                    enctype="multipart/form-data">
+                                                                    action="{{ route('category.update', $value->id) }}"
+                                                                    method="POST" enctype="multipart/form-data">
                                                                     @method('PUT')
                                                                     @csrf
                                                                     <div class="card-body text-left">
@@ -260,6 +307,32 @@
                                                                                     @enderror
                                                                                 </div>
                                                                             </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label for="image">Image</label>
+                                                                                    <input type="file" id="file-ip-1"
+                                                                                        accept="image/*"
+                                                                                        class="form-control"
+                                                                                        value="{{ old('image') }}"
+                                                                                        onchange="showPreview1{{ $value->id }}(event);"
+                                                                                        name="image">
+                                                                                    @error('image')
+                                                                                        <p style="color: red">
+                                                                                            {{ $message }}</p>
+                                                                                    @enderror
+                                                                                    <div class="preview mt-2"
+                                                                                        style="display:flex;">
+                                                                                        <img src="{{ asset('upload/images/category/' . $value->image) }}"
+                                                                                            width="100px" class="mr-2">
+                                                                                        <img src=""
+                                                                                            id="file-ip-{{ $value->id }}-preview1"
+                                                                                            width="100px">
+                                                                                    </div>
+                                                                                    <input type="checkbox" name="remove">
+                                                                                    <label for="Remove">Remove</label>
+                                                                                </div>
+                                                                            </div>
+
                                                                             <div class="col-md-12">
                                                                                 <div class="form-group">
                                                                                     <label for="parent">Parent
@@ -321,6 +394,7 @@
                                 <tfoot>
                                     <tr>
                                         <th>S.N</th>
+                                        <th>Image</th>
                                         <th>Name</th>
                                         <th class="text-center">Sub Categories</th>
                                         <th class="text-center">Status</th>
@@ -353,6 +427,21 @@
                                                 @error('name')
                                                     <p style="color: red">{{ $message }}</p>
                                                 @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="image">Image </label>
+
+                                                <input type="file" id="file-ip-1" accept="image/*"
+                                                    class="form-control-file border" value="{{ old('image') }}"
+                                                    onchange="showPreview(event);" name="image">
+                                                @error('image')
+                                                    <p style="color: red">{{ $message }}</p>
+                                                @enderror
+                                                <div class="preview mt-2">
+                                                    <img src="" id="file-ip-1-preview" width="200px">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -390,4 +479,42 @@
         </section>
         <!-- /.content -->
     </div>
+@endsection
+
+@section('script')
+    <!-- image preview -->
+    <script type="text/javascript">
+        function showPreview(event) {
+            if (event.target.files.length > 0) {
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("file-ip-1-preview");
+                preview.src = src;
+                preview.style.display = "block";
+            }
+        }
+    </script>
+    @foreach ($categories as $value)
+        <script type="text/javascript">
+            function showPreview1{{ $value->id }}(event) {
+                if (event.target.files.length > 0) {
+                    var src = URL.createObjectURL(event.target.files[0]);
+                    var preview = document.getElementById("file-ip-{{ $value->id }}-preview1");
+                    preview.src = src;
+                    preview.style.display = "block";
+                }
+            }
+        </script>
+        @foreach ($value->subcategories as $sub)
+        <script type="text/javascript">
+            function showPreview2{{ $sub->id }}(event) {
+                if (event.target.files.length > 0) {
+                    var src = URL.createObjectURL(event.target.files[0]);
+                    var preview = document.getElementById("file-ip-{{ $sub->id }}-preview2");
+                    preview.src = src;
+                    preview.style.display = "block";
+                }
+            }
+        </script>
+    @endforeach
+    @endforeach
 @endsection

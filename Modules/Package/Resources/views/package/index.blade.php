@@ -66,7 +66,7 @@
                                                 <td class="text-center"><img
                                                         src="{{ asset('upload/images/package/' . $value->thumbnail) }}"
                                                         width="120px" alt="{{ $value->name }}"> </td>
-                                                <td>{{ $value->category->name }}</td>
+                                                <td>{{ $value->category->category->name }} - {{ $value->category->name }}</td>
                                                 <td>{{ $value->duration }}</td>
                                                 <td>
                                                     <a href="{{ route('itinerary.index',$value->id) }}" class="btn btn-info btn-sm">View Itinerary ({{ $value->itinerary->count() }})</a>

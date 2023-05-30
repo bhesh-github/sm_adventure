@@ -59,7 +59,13 @@
                                                 <select name="category" id="category" class="form-control">
                                                     <option value="" disabled selected>Select Category</option>
                                                     @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}" {{ ($category->id==old('category'))?'selected':'' }}>{{ $category->name }}</option>
+                                                        <optgroup label="{{ $category->name }}">
+                                                            @foreach ($category->subcategories as $sub)
+                                                                <option value="{{ $sub->id }}"
+                                                                    {{ $sub->id == old('category') ? 'selected' : '' }}>
+                                                                    {{ $sub->name }}</option>
+                                                            @endforeach
+                                                        </optgroup>
                                                     @endforeach
                                                 </select>
                                                 @error('category')
@@ -85,7 +91,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="images">Upload Images</label><br>
-                                                <input id="fileupload" type="file" name="images[]" multiple="multiple"/>
+                                                <input id="fileupload" type="file" name="images[]" multiple="multiple" />
                                                 @error('images')
                                                     <p style="color: red">{{ $message }}</p>
                                                 @enderror
@@ -206,8 +212,9 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="meta_title">Meta Title</label>
-                                                                <input type="text" name="meta_title" class="form-control"
-                                                                    placeholder="Enter Meta Title " value="{{ old('meta_title') }}"">
+                                                                <input type="text" name="meta_title"
+                                                                    class="form-control" placeholder="Enter Meta Title "
+                                                                    value="{{ old('meta_title') }}"">
                                                                 @error('meta_title')
                                                                     <p style="color: red">{{ $message }}</p>
                                                                 @enderror
@@ -235,7 +242,7 @@
                                                 </div>
                                                 <!-- /.card-body -->
                                             </div>
-                
+
                                             <!-- /.card -->
                                         </div>
                                         <div class="col-md-6">

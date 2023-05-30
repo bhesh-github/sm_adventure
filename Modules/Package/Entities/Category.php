@@ -13,7 +13,7 @@ class Category extends Model
     protected $guarded = [];
 
     function category(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class,'parent_id','id');
     }
 
     function subcategories(){
