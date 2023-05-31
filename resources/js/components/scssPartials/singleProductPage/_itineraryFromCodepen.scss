@@ -1,0 +1,97 @@
+.itinerary-from-codepen-wrapper {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 15px 5px rgb(227, 227, 227);
+  padding: 1em;
+  width: 100%;
+  // margin-bottom: 1em;
+  .itinerary-heading {
+    font-weight: 600;
+    font-size: 1.4em;
+  }
+  .faq {
+    margin: 0 auto;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .faq-heading {
+    padding: 1em 0;
+    font-weight: 400;
+    font-size: 19px;
+    -webkit-transition: text-indent 0.2s;
+    color: #f79621;
+  }
+
+  .faq-text {
+    font-weight: 400;
+    width: 95%;
+    color: grey;
+  }
+
+  .faq label {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 56px;
+    padding-top: 1px;
+
+    background-color: #fafafa;
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+  .faq input[type="checkbox"] {
+    display: none;
+  }
+  .faq .faq-arrow {
+    width: 5px;
+    height: 5px;
+    transition: -webkit-transform 0.8s;
+    transition: transform 0.8s;
+    transition: transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-top: 2px solid rgba(0, 0, 0, 0.33);
+    border-right: 2px solid rgba(0, 0, 0, 0.33);
+    float: right;
+    position: relative;
+    top: -50px;
+    // top: -30px;
+    right: 27px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    // margin-bottom: 2em;
+  }
+
+  .faq input[type="checkbox"]:checked + label > .faq-arrow {
+    transition: -webkit-transform 0.8s;
+    transition: transform 0.8s;
+    transition: transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  .faq input[type="checkbox"]:checked + label {
+    display: block;
+    background: rgba(255, 255, 255, 255) !important;
+    color: #4f7351;
+    height: 225px;
+    transition: height 0.8s;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .faq input[type="checkbox"]:not(:checked) + label {
+    display: block;
+    transition: height 0.8s;
+    height: 60px;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .itinerary-from-codepen-wrapper {
+    margin-bottom: 2em;
+  }
+}

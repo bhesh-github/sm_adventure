@@ -1,0 +1,153 @@
+.action-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	height: 100%;
+	font-weight: 600;
+	border-radius: 6px;
+	color: #fff;
+	padding: 1em 0;
+	width: 100%;
+}
+.overlay {
+	position: absolute;
+	z-index: 1;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.56);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	.modal-comp {
+		overflow: hidden;
+		border-radius: 0.8em;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: rgb(255, 255, 255);
+		height: 700px;
+		width: 700px;
+		.head {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 3em;
+			width: 100%;
+			background-color: $primaryYellow;
+			.heading {
+				font-weight: 600;
+				margin-top: 5px;
+				color: #fff;
+			}
+		}
+		.body {
+			height: calc(100% - 3em);
+			width: 100%;
+			padding: 1.5em;
+			overflow-y: auto;
+			.content-wrapper {
+				.booking-policy-wrapper {
+					margin-bottom: 2em;
+					display: flex;
+					flex-direction: column;
+					.more-info-title {
+						text-align: left;
+						color: $primaryBlue;
+						font-weight: 600;
+						.pushpin-icon {
+							color: $primaryYellow;
+							margin-right: 0.5em;
+							width: 1.3em;
+							height: 1.3em;
+						}
+					}
+				}
+			}
+			.selected-view {
+				margin: 0.5em 0;
+			}
+			.display-value{
+				color: grey;
+			}
+			.buttons {
+				display: flex;
+				justify-content: flex-end;
+				align-items: flex-end;
+				width: 100%;
+				gap: 1em;
+				.button {
+					border: none;
+					background-color: transparent;
+					height: 100%;
+					font-weight: 600;
+					color: $primaryBlue;
+				}
+				.sumbit-btn {
+					color: $primaryYellow;
+				}
+			}
+		}
+		.close-button {
+			cursor: pointer;
+			position: absolute;
+			top: 0.9em;
+			right: 1em;
+			color: #fff;
+
+			width: 1.2em;
+			height: 1.2em;
+		}
+	}
+}
+
+// ConformationNotice Component
+.conformation-content {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2em;
+	.more-info-title {
+		color: $primaryBlue;
+		font-weight: 600;
+		.pushpin-icon {
+			color: $primaryYellow;
+			margin-right: 0.5em;
+			width: 1.3em;
+			height: 1.3em;
+		}
+	}
+	.format {
+		margin-left: 2em;
+	}
+	.note {
+		margin-left: 2em;
+	}
+}
+.booking-policy-content {
+	.booking-format {
+		text-align: left;
+		font-weight: 600;
+		margin-left: 3.5em;
+	}
+	.note {
+		margin-left: 3.8em;
+		color: grey;
+		font-size: 15px;
+	}
+}
+
+// Booking Policy Component
+.booking-policy-content {
+	.format {
+		font-weight: 600;
+		margin-left: 2.1em;
+	}
+	.note {
+		margin-left: 2.1em;
+		color: #000;
+		font-size: 14.5px;
+	}
+}

@@ -51,6 +51,15 @@ class TestimonialController extends Controller
             $request->image->move(public_path('upload/images/testimonials'), $imageName);
 
         }
+        $thumbnailName = '';
+        if ($request->thumbnail)
+        {
+            $filename=$request->thumbnail->getClientOriginalName();
+            $thumbnailName = time().$filename;
+
+            $request->thumbnail->move(public_path('upload/images/testimonials'), $thumbnailName);
+
+        }
         if($request->status){
             $status = $request->status;
         }
@@ -61,7 +70,9 @@ class TestimonialController extends Controller
             'name' => $request['name'],
             'message' => $request['message'],
             'status' => $status,
-            'image' => $imageName
+            'image' => $imageName,
+            'thumbnail' => $thumbnailName,
+            'video' => $request['video']
         ]);
         
         return redirect()->route('testimonials.index')->with('success','Created Successfully');
@@ -108,6 +119,15 @@ class TestimonialController extends Controller
             $request->image->move(public_path('upload/images/testimonials'), $imageName);
 
         }
+        $thumbnailName = $testimonial->thumbnail;
+        if ($request->thumbnail)
+        {
+            $filename=$request->thumbnail->getClientOriginalName();
+            $thumbnailName = time().$filename;
+
+            $request->thumbnail->move(public_path('upload/images/testimonials'), $thumbnailName);
+
+        }
         if($request->status){
             $status = $request->status;
         }
@@ -119,7 +139,9 @@ class TestimonialController extends Controller
             'name' => $request['name'],
             'message' => $request['message'],
             'status' => $status,
-            'image' => $imageName
+            'image' => $imageName,
+            'thumbnail' => $thumbnailName,
+            'video' => $request['video']
         ]);
         
         return redirect()->route('testimonials.index')->with('success','Updated Successfully');

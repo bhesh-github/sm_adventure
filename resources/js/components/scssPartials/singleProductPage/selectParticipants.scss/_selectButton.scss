@@ -1,0 +1,16 @@
+.select-button {
+  background-color: transparent;
+  border-radius: 6px;
+  color: grey;
+  padding: 8px 10px 8px 20px;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid rgb(214, 212, 212);
+  width: 5em;
+  .select-content {
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    overflow: auto;
+  }
+}

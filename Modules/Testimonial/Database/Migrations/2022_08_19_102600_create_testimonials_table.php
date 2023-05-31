@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('message');
             $table->string('status')->nullable();
             $table->string('image')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->text('video')->nullable();
             $table->timestamps();
         });
     }

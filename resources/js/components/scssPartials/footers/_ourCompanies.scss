@@ -1,0 +1,59 @@
+.our-companies {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: rgb(228, 228, 228);
+	.our-companies-heading {
+		margin-top: 1em;
+		font-weight: 600;
+		text-align: center;
+		color: #20558a;
+	}
+	.div-logo-wrapper {
+		align-self: center;
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		margin-bottom: 2em;
+		.logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1em;
+			height: 6em;
+			.logo-image {
+				width: 100%;
+				height: 100%;
+			}
+			.company-text {
+				font-size: 1.5em;
+			}
+		}
+	}
+	@media screen and (max-width: 995px) {
+		.div-logo-wrapper {
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		}
+	}
+	@media screen and (max-width: 769px) {
+		.div-logo-wrapper {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+	}
+	@media screen and (max-width: 577px) {
+		.div-logo-wrapper {
+			grid-template-columns: 1fr 1fr 1fr;
+			.logo {
+				padding: 1em 2em;
+			}
+		}
+	}
+	@media screen and (max-width: 555px) {
+		.div-logo-wrapper {
+			grid-template-columns: 1fr 1fr;
+			.logo {
+				padding: 1.5em 2em;
+			}
+		}
+	}
+}

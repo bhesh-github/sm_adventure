@@ -1,0 +1,99 @@
+.faq-page {
+	.faq-banner {
+		height: 25em;
+		width: 100%;
+		margin-bottom: 3em;
+	}
+	.title {
+		font-weight: 600;
+		text-align: left;
+		margin-bottom: 0.5em;
+		color: $primaryBlue;
+	}
+	.body {
+		.inner-section {
+			margin-bottom: 2em;
+			.column-1 {
+				.question-wrapper {
+					width: 100%;
+					box-shadow: 0 0 15px 5px rgb(223, 222, 222);
+					padding: 2em;
+					overflow: hidden;
+					border-radius: 0.8em;
+					.accordion-section {
+						.faq-heading {
+							color: $primaryBlue;
+							font-size: $allHeadingFontSize;
+							font-weight: $allHeadingFontWeight;
+							padding: 1em 0;
+						}
+						.accordion-wrapper {
+							width: 100%;
+							.accordion {
+								padding-right: 2em;
+								.list {
+									list-style: none;
+									width: 100%;
+									padding: 1em 0;
+									color: $primaryYellow;
+									border-bottom: 1px solid rgb(207, 207, 207);
+									label {
+										display: flex;
+										align-items: center;
+										font-size: 18px;
+										font-weight: 500;
+										cursor: pointer;
+									}
+									label::before {
+										content: '+';
+										margin-right: 10px;
+										font-size: 24px;
+										font-weight: 600;
+									}
+									input[type='radio'] {
+										display: none;
+									}
+									input[type='radio']:checked + label + .content {
+										max-height: 10000000000em;
+										padding: 10px 10px 20px;
+										transition: 0.5s;
+									}
+									input[type='radio']:checked + label::before {
+										content: '-';
+									}
+								}
+								.content {
+									color: grey;
+									padding: 0 10px;
+									line-height: 26px;
+									max-height: 0;
+									overflow: hidden;
+									transition: max-height 1s, padding 0.5s;
+									text-align: left;
+									.discription-list {
+										ul li {
+											text-align: left;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.column-1 {
+					margin-bottom: 2em;
+				}
+			}
+			.column-2 {
+				.side-image {
+					width: 100%;
+					overflow: hidden;
+					border-radius: 0.8em;
+					height: 30em;
+				}
+			}
+		}
+	}
+}

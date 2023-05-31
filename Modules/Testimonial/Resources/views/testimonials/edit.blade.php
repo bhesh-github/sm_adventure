@@ -44,14 +44,41 @@
                                                 <label for="image">Image </label>
                                                 
                                                 <input type="file" id="file-ip-1" accept="image/*" class="form-control-file border" value="{{ old('image') }}" onchange="showPreview1(event);" name="image">
-                                                <img src="{{ asset('upload/images/testimonials/'.$testimonial->image) }}" alt="{{ $testimonial->title }}" width="200px">
+                                                
                                                 @error('image')
                                                         <p style="color: red">{{ $message }}</p>
                                                     @enderror
-                                                <div class="preview mt-2">
+                                                <div class="preview mt-2" style="display: flex;">
+                                                    <img src="{{ asset('upload/images/testimonials/'.$testimonial->image) }}" alt="{{ $testimonial->title }}" width="200px" class="mr-3">
                                                     <img src="" id="file-ip-1-preview" width="200px">
                                                 </div>
                                                 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="thumbnail">Thumbnail </label>
+                                                
+                                                <input type="file" id="file-ip-1" accept="image/*" class="form-control-file border" value="{{ old('thumbnail') }}" onchange="showPreview2(event);" name="thumbnail">
+                                                
+                                                @error('thumbnail')
+                                                        <p style="color: red">{{ $message }}</p>
+                                                    @enderror
+                                                <div class="preview mt-2" style="display: flex">
+                                                    <img src="{{ asset('upload/images/testimonials/'.$testimonial->thumbnail) }}" alt="{{ $testimonial->title }}" width="200px" class="mr-3">
+                                                    <img src="" id="file-ip-1-preview2" width="200px">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="video">Embed Video Link</label>
+                                                <input type="text" name="video" class="form-control"
+                                                    placeholder="Enter Embed Video" value="{{ $testimonial->video }}">
+                                                @error('video')
+                                                    <p style="color: red">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -103,7 +130,28 @@
 
 @endsection
 @section('script')
-
+    <!-- image preview -->
+    <script type="text/javascript">
+        function showPreview1(event) {
+            if (event.target.files.length > 0) {
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("file-ip-1-preview");
+                preview.src = src;
+                preview.style.display = "block";
+            }
+        }
+    </script>
+    <!-- image preview -->
+    <script type="text/javascript">
+        function showPreview2(event) {
+            if (event.target.files.length > 0) {
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("file-ip-1-preview2");
+                preview.src = src;
+                preview.style.display = "block";
+            }
+        }
+    </script>
 
     <script>
         $('textarea.summernote').summernote({

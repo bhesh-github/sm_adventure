@@ -1,0 +1,39 @@
+.booking-info-page {
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 2em;
+  .banner-image {
+    width: 100%;
+    height: 25em;
+    margin-bottom: 4em;
+  }
+  .info-section {
+    padding: 0 5em; 
+    padding-bottom: 2em;
+    .main-heading {
+      font-weight: 600;
+      color: $primaryYellow;
+    }
+    .sub-heading {
+      color: $primaryBlue;
+      font-weight: 600;
+    }
+    .booking-conditions {
+      font-weight: 600;
+      color: $primaryYellow;
+    }
+    .booking-brief {
+      font-weight: 600;
+    }
+    .cancellation-brief {
+      font-weight: 600;
+      .highlight {
+        color: $primaryBlue;
+      }
+    }
+    .cancellation-list {
+      color: grey;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,232 @@
+@import '../slider';
+@import '../tripCard';
+@import '../testimonial2';
+@import '../multiCarousel';
+
+.home {
+	display: flex;
+	flex-direction: column;
+	.home-main-banner {
+		width: 100%;
+		height: 75vh;
+		// height: 565px;
+		background-image: url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		z-index: -1;
+		margin-bottom: 2em;
+		.home-main-banner-overlay {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.173);
+		}
+	}
+	.long-searchbar-outer-wrapper {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transform: translate(-50%, -50%);
+		left: 50%;
+		top: 60%;
+		width: 38em;
+		// left: calc(50% - 19em);
+		gap: 1em;
+
+		.long-searchbar-wrapper {
+			position: relative;
+			width: 100%;
+			height: 3em;
+			display: flex;
+			justify-content: center;
+			align-self: center;
+			border: none;
+			overflow: hidden;
+			.long-searchbar-input {
+				width: 100%;
+				height: 100%;
+				padding: 5px 20px 5px 42px;
+				font-size: 20px;
+				border: 1px solid rgb(223, 219, 219);
+				border-radius: 10px;
+				outline: none;
+			}
+			.search-icon {
+				position: absolute;
+				top: 12px;
+				left: 10px;
+				width: 1.3em;
+				height: 1.3em;
+				cursor: pointer;
+				color: grey;
+			}
+		}
+		.long-searchbar-label {
+			text-align: center;
+			top: 45%;
+			// left: calc(50% - 7.5em);
+			text-shadow: 0 0 4px rgb(0, 0, 0);
+			font-size: 1.7em;
+			font-weight: 600;
+			color: #fff;
+		}
+	}
+	@media screen and (max-width: 800px) {
+		.long-searchbar-outer-wrapper {
+			width: 30em;
+		}
+	}
+	@media screen and (max-width: 600px) {
+		.long-searchbar-outer-wrapper {
+			width: 25em;
+			// height: ;
+			.long-searchbar-label {
+				font-size: 20px;
+			}
+			.long-searchbar-wrapper {
+				height: 2em;
+				.search-icon {
+					top: 9px;
+					left: 10px;
+					width: 1em;
+					height: 1em;
+				}
+				.long-searchbar-input {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 500px) {
+		.long-searchbar-outer-wrapper {
+			width: 20em;
+			.long-searchbar-wrapper {
+				height: 2em;
+				.search-icon {
+					top: 7px;
+				}
+			}
+		}
+	}
+	.top-inbound-tours-wrapper {
+		align-self: center;
+		width: 90%;
+		.top-inbound-tours-heading {
+			font-weight: 600;
+			font-size: 1.4em;
+		}
+		.top-inbound-tours-card {
+			margin-right: 2em;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		.top-inbound-tours-wrapper {
+			width: 95%;
+			.top-inbound-tours-card {
+				margin-right: 0.5em;
+			}
+		}
+	}
+	.section-2 {
+		width: 90%;
+		align-self: center;
+		.featured-trip-cards-wrapper {
+			display: flex;
+			flex-direction: column;
+			margin: 1rem 0;
+			margin-bottom: 2em;
+			.featured-trip-cards-heading {
+				font-weight: 600;
+				font-size: 1.4em;
+				margin-bottom: 1rem;
+			}
+			.featured-trip-cards {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr 1fr;
+				gap: 2rem 1.5rem;
+			}
+			@media screen and (max-width: 1150px) {
+				.featured-trip-cards {
+					grid-template-columns: 1fr 1fr;
+					margin: 0 4em;
+				}
+			}
+			@media screen and (max-width: 900px) {
+				.featured-trip-cards {
+					margin: 0 2em;
+				}
+			}
+			@media screen and (max-width: 650px) {
+				.featured-trip-cards {
+					grid-template-columns: 1fr;
+					margin: 0 3em;
+				}
+			}
+		}
+
+		.seasonal-offer-heading {
+			font-weight: 600;
+			font-size: 1.4em;
+			margin-bottom: 1rem;
+		}
+		.top-outbound-tour-cards-wrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-bottom: 2em;
+			.top-outbound-tours-cards-heading {
+				font-weight: 600;
+				font-size: 1.4em;
+				margin-bottom: 1rem;
+			}
+			.top-outbound-tour-cards {
+				margin-top: 1em;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+				gap: 1rem;
+			}
+			@media screen and (max-width: 1050px) {
+				.top-outbound-tour-cards {
+					grid-template-columns: 1fr 1fr 1fr 1fr;
+				}
+			}
+			@media screen and (max-width: 700px) {
+				.top-outbound-tour-cards {
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+			}
+			@media screen and (max-width: 500px) {
+				.top-outbound-tour-cards {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+		}
+	}
+	.special-tours-package {
+		align-self: center;
+		height: 600px;
+		width: 100%;
+		background-color: rgb(255, 234, 208);
+		margin-bottom: 2em;
+		.special-tours-package-heading {
+			text-align: center;
+			font-size: 3em;
+			margin-bottom: 0.2em;
+		}
+	}
+}
+
+// ---Our Special Tours Comp---
+.our-special-tour-card-wrapper {
+	background-color: green;
+	.our-special-tour-img {
+		height: 200px;
+		width: 200px;
+		color: red;
+		background-color: red;
+		border-radius: 20px;
+	}
+}

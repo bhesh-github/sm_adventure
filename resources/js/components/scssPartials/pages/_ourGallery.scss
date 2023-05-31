@@ -1,0 +1,131 @@
+.our-gallery-wrapper {
+  .banner {
+    height: 25em;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.796);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .our-gallery {
+    // padding-top: 9em;
+    padding-top: 2em;
+    margin-bottom: 2em;
+    .gallery-layout {
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      overflow: hidden;
+      .layout-image-wrapper {
+        border-radius: 0.8em;
+        position: relative;
+        overflow: hidden;
+        .layout-image {
+          cursor: pointer;
+          width: 305px;
+          border-radius: 0.8em;
+          height: 300px;
+          transition: transform 0.5s;
+        }
+        .layout-image:hover {
+          transform: scale(1.2);
+        }
+      }
+      .image-title-wrapper {
+        border-radius: 0 0 0.8em 0.8em;
+        position: absolute;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background-color: $primaryYellow;
+        height: 50px;
+        padding: 0.5em 0;
+        font-size: 15px;
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+  }
+  .ourGallery-overlay {
+    top: 0;
+    position: absolute;
+    position: fixed;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.804);
+    .our-gallery-slider {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 90%;
+      width: 750px;
+    }
+    @media screen and (max-width: 650px) {
+      .our-gallery-slider {
+        width: 450px;
+      }
+    }
+    @media screen and (max-width: 560px) {
+      .our-gallery-slider {
+        width: 400px;
+      }
+    }
+    @media screen and (max-width: 470px) {
+      .our-gallery-slider {
+        width: 350px;
+      }
+    }
+    .icon {
+      transform: translate(0, -50%);
+      top: 50%;
+    }
+    .slider-left-icon {
+      border-radius: 0 5px 5px 0;
+      position: absolute;
+      left: 0;
+    }
+    .slider-right-icon {
+      border-radius: 5px 0 0 5px;
+      position: absolute;
+      right: 0;
+    }
+    .slider-dots {
+      position: absolute;
+      bottom: 1em;
+      left: 50%;
+      transform: translate(-50%);
+      .dots-icon {
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        width: 30px;
+        height: 30px;
+      }
+      .dots-icon:hover {
+        color: $primaryYellow;
+      }
+    }
+    .close-btn {
+      position: absolute;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      right: 1em;
+      top: 1em;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.what-you-can-expect-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 15px 5px rgb(227, 227, 227);
+  padding: 1em;
+  overflow-x: hidden;
+  .what-you-can-expect-heading {
+    font-weight: 600;
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+  }
+  .events-intro-cards {
+    font-size: 14px;
+    display: flex;
+    gap: 1em;
+    overflow-x: hidden  ;
+    .event-image {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-width: 7em;
+      min-height: 7em;
+    }
+    .event-title-and-summary {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .event-title {
+        font-weight: 600;
+      }
+      .event-summary {
+        color: grey;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* number of lines to show */
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}

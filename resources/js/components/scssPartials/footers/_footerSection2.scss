@@ -1,0 +1,62 @@
+.footer-section-2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	padding: 2.5em 0;
+	.company-logo {
+		font-weight: 600;
+		color: #20558a;
+		.holidays {
+			color: #f79621;
+		}
+	}
+	.section-nav {
+		margin-top: 0.5em;
+		align-self: center;
+		display: flex;
+		align-items: center;
+		.nav-item {
+			color: #000;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 600;
+			margin: 0 15px;
+			cursor: pointer;
+			transition: 0.5s;
+		}
+		@media screen and (max-width: 400px) {
+			.nav-item {
+				margin: 0 10px;
+			}
+		}
+		.nav-item:hover {
+			color: #f79621;
+		}
+	}
+	.social-media-icons {
+		margin-top: 1em;
+		margin-bottom: 0.5em;
+		.icons {
+			width: 20px;
+			height: 20px;
+			margin: 0 0.5em;
+			color: #f79621;
+			cursor: pointer;
+		}
+		.fb {
+			color: #3B5998;
+		}
+    .insta{
+      color: #DD247B;
+    }
+    .tripAdv{
+      color: #34E0A1;
+    }
+	}
+	.copyright-text {
+		margin-top: 0.6em;
+		font-size: 13px;
+		text-align: center;
+	}
+}

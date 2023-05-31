@@ -1,0 +1,41 @@
+// .about-us {
+.banner {
+	height: 25em;
+	width: 100%;
+	// margin-bottom: 1em;
+}
+.title {
+	padding-top: 1em;
+	// padding-bottom: 1em;
+	font-weight: 800;
+	color: $primaryBlue;
+	text-align: center;
+	.sealink {
+		font-size: 1.5em;
+		color: $primaryBlue;
+	}
+	.holidays {
+		font-size: 1.5em;
+		margin-right: 0.3em;
+		color: $primaryYellow;
+	}
+}
+.caption {
+	text-align: center;
+	font-size: 2em;
+	color: grey;
+	font-weight: 600;
+  margin-bottom: 2em;
+}
+
+.body-section {
+	padding: 0 5em;
+	.heading {
+		margin-bottom: 0.5em;
+		color: $primaryBlue;
+		font-weight: 600;
+		font-weight: bold;
+    text-align: center;
+	}
+}
+// }

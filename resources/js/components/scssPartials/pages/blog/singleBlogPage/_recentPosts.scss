@@ -1,0 +1,21 @@
+.recent-posts-wrapper {
+	box-shadow: 0 0 15px 5px rgb(223, 222, 222);
+	border-radius: 10px;
+	padding: 2em;
+	display: flex;
+	gap: 1em;
+	flex-direction: column;
+	.recent-post-card {
+		display: flex;
+        gap: 0.5em;
+		align-items: center;
+		border: 1px solid rgb(212, 212, 212);
+		.card-image-wrapper {
+            width: 15em;
+			.card-image {
+                height: 100%;
+                width: 100%;
+			}
+		}
+	}
+}

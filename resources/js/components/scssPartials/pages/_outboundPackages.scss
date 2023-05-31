@@ -1,0 +1,49 @@
+.outbound-packages-page {
+  .main-banner {
+    width: 100%;
+    height: 25em;
+  }
+  .heading{
+    margin-top: 0.5em;
+    font-weight: 700;
+    color: $primaryYellow;
+    text-align: center;
+  }
+  .cards-wrapper {
+    overflow: hidden;
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 3em;
+    gap: 2em;
+    .tour-card {
+      display: flex;
+      height: 300px;
+      flex-grow: 1;
+      margin-bottom: 1em;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 1199px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .cards-wrapper {
+      grid-template-columns:  1fr 1fr;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .cards-wrapper {
+     gap: 1em;
+    }
+  }
+  @media screen and (max-width: 535px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr;
+     gap: 1em;
+     padding: 0 2em;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.general-info-page {
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 2em;
+    .banner-image {
+        width: 100%;
+        height: 25em;
+        margin-bottom: 4em;
+    }
+  .info-section {
+    padding: 0 5em;
+    .general-info-row {
+      .general-info-title {
+        color: $primaryYellow;
+        font-weight: 600;
+      }
+  }
+    .note{
+      margin: 5em 0;
+    }
+  }
+}

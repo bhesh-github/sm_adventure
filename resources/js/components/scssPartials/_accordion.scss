@@ -1,0 +1,51 @@
+.accordion-wrapper {
+	width: 100%;
+	.accordion {
+		padding-right: 2em;
+		.list {
+			.side-bar-item {
+				text-align: center;
+			}
+			list-style: none;
+			width: 100%;
+			// padding: 1em 0;
+			color: #fff;
+			text-align: center;
+			label {
+				display: flex;
+				align-items: center;
+				font-size: 18px;
+				font-weight: 500;
+				cursor: pointer;
+			}
+			label::before {
+				content: '+';
+				margin-right: 10px;
+				font-size: 24px;
+				font-weight: 600;
+			}
+			input[type='radio'] {
+				display: none;
+			}
+			input[type='radio']:checked + label + .content {
+				max-height: 10000000000em;
+				padding: 10px 10px 20px;
+			}
+			input[type='radio']:checked + label::before {
+				content: '-';
+			}
+		}
+		.content {
+			color: #fff;
+			padding: 0 10px;
+			line-height: 26px;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 1s, padding 0.5s;
+			cursor: pointer;
+		}
+		.content:hover {
+			color: rgb(203, 203, 203);
+		}
+	}
+}

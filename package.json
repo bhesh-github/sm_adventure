@@ -5,13 +5,29 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@babel/preset-react": "^7.22.3",
         "@popperjs/core": "^2.11.6",
+        "@vitejs/plugin-react": "^4.0.0",
         "@vitejs/plugin-vue": "^4.0.0",
         "axios": "^1.1.2",
         "bootstrap": "^5.2.3",
         "laravel-vite-plugin": "^0.7.2",
         "sass": "^1.56.1",
         "vite": "^4.0.0",
-        "vue": "^3.2.37"
+        "vue": "^3.2.37",
+        "react-icons": "^4.8.0",
+        "react-multi-carousel": "^2.8.3",
+        "react-player": "^2.12.0",
+        "react-responsive-carousel": "^3.2.23",
+        "react-router": "^6.11.1",
+        "react-router-dom": "^6.11.1",
+        "google-map-react": "^2.2.1",
+        "react-datepicker": "^4.11.0",
+        "react-scripts": "5.0.1",
+        "react-select": "^5.7.3"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     }
 }

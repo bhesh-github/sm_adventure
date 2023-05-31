@@ -1,0 +1,144 @@
+@import './selectButton';
+@import './participantsModal';
+.select-participants-wrapper {
+	border-radius: 10px;
+	box-shadow: 0 0 15px 5px rgb(227, 227, 227);
+	padding: 1em;
+	margin-bottom: 2em;
+	overflow-x: auto;
+	.select-participants-heading {
+		font-weight: 600;
+		font-size: 1.4em;
+		margin-bottom: 0.5em;
+	}
+	.table-and-button-wrapper {
+		display: flex;
+		padding: 0 0.8em;
+		.select-participants-table {
+			padding: 0 0;
+			overflow: hidden;
+			width: 100%;
+			display: flex;
+			font-size: 14px;
+			border-radius: 7px;
+			border: none;
+			overflow: hidden;
+			.select-participants-badge {
+				background-color: rgb(243, 243, 243);
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+				.select-participants-title {
+					padding: 1em 0 1em 2em;
+					background-color: #f79621;
+					width: 100%;
+					font-weight: 600;
+					color: white;
+				}
+				.select-participants-body {
+					border: none;
+					margin: 1em 0 1em 2em;
+					.date-picker {
+						border: 1px solid rgb(214, 212, 212);
+						border-radius: 6px;
+						padding: 8px 10px 8px 20px;
+						color: grey;
+					}
+				}
+				.total-price {
+					padding: 8px 10px 8px 0;
+				}
+			}
+
+			.select-participants-badge:nth-child(1) {
+				flex-grow: 2;
+			}
+		}
+		.buttons-wrapper {
+			margin-top: 1em;
+			padding: 0;
+			justify-content: flex-start;
+			display: flex;
+			gap: 1em;
+			.participants-button {
+				transition: 0.5s;
+				border: none;
+				color: #fff;
+				border-radius: 5px;
+				padding: 10px 25px;
+			}
+			.book-now {
+				background-color: $primaryBlue;
+			}
+			.book-now:hover {
+				background-color: #163c63;
+			}
+			.more-info {
+				background-color: rgb(187, 187, 187);
+			}
+			.more-info:hover {
+				background-color: rgb(145, 145, 145);
+			}
+		}
+
+		.participants-modal {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-left: 1em;
+			gap: 1em;
+			width: 20%;
+		}
+	}
+}
+@media screen and (max-width: 995px) {
+	.select-participants-wrapper {
+		overflow: scroll;
+		margin-bottom: 2em;
+		.table-and-button-wrapper {
+			width: 60em;
+			.select-participants-table {
+				border-radius: 7px;
+			}
+			.select-participants-buttons {
+				margin: 2em;
+			}
+		}
+	}
+}
+@media screen and (max-width: 577px) {
+	.select-participants-wrapper {
+		margin: 0 2em;
+		margin-bottom: 2em;
+	}
+}
+// .book-now-wrapper {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 1;
+//   height: 100%;
+//   width: 100%;
+//   background-color: rgba(0, 0, 0, 0.396);
+//   .pop-up {
+//     overflow-y: auto;
+//     top: calc(50% - 37.5%);
+//     left: calc(50% - 15%);
+//     position: absolute;
+//     background-color: white;
+//     border-radius: 10px;
+//     // box-shadow: 0 0 15px 5px rgb(227, 227, 227);
+//     padding: 1em;
+//     height: 75%;
+//     width: 30%;
+//     .close-icon {
+//       cursor: pointer;
+//       position: absolute;
+//       z-index: 1;
+//       width: 1.5em;
+//       height: 1.5em;
+//       right: 1em;
+//     }
+//   }
+// }

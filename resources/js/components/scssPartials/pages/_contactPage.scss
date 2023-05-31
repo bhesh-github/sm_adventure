@@ -1,0 +1,149 @@
+.contact-page {
+	// padding-top: 9em;
+	overflow: hidden;
+	.main-banner {
+		height: 25em;
+		width: 100%;
+		margin-bottom: 2em;
+	}
+	.body-section {
+		width: 100%;
+		.contact-caption {
+			color: $primaryBlue;
+			text-align: center;
+			font-weight: 700;
+			margin-top: 2em;
+			margin-bottom: 1em;
+		}
+		.form-card-wrapper {
+			padding: 0;
+			.form-container {
+        height: 100%;
+				.form-section {
+					border-radius: 0.8em;
+					box-shadow: 0 0 15px 5px rgb(223, 222, 222);
+					padding: 2em;
+					// margin: 1em 0;
+					.send-button {
+						background-color: $primaryYellow;
+						padding: 0.5em 0;
+						border: none;
+						color: #fff;
+						border-radius: 5px;
+						width: 10em;
+						margin-left: 0.8em;
+					}
+				}
+			}
+			.cards-container {
+				.contact-cards {
+					margin-bottom: 1em;
+					.contact-card {
+						background-color: #fff;
+						background-color: $primaryBlue;
+						display: flex;
+						justify-content: center;
+						flex-direction: column;
+						gap: 1em;
+						align-items: center;
+						border-radius: 0.8em;
+						box-shadow: 0 0 15px 5px rgb(223, 222, 222);
+						height: 15.6em;
+						.icons-wrapper {
+							.card-icon {
+								background-color: transparent;
+								padding: 15px;
+								border-radius: 50%;
+								width: 4em;
+								height: 4em;
+								color: #fff;
+								background-color: $primaryYellow;
+								border: 3px solid #fff;
+							}
+						}
+						.card-text {
+							color: grey;
+							color: #fff;
+							text-align: center;
+							font-weight: 400;
+						}
+					}
+				}
+			}
+		}
+		.container-section-3 {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 2em;
+			margin: 1em 0;
+			font-size: 1.2em;
+			.text-wrapper {
+				padding: 2em 1em;
+				.text {
+					overflow: hidden;
+					text-align: center;
+					// border-radius: 0.8em;
+					box-shadow: 0 0 15px 5px rgb(223, 222, 222);
+					display: flex;
+					.left-container {
+						width: 50%;
+						background-color: $primaryYellow;
+						.asking {
+							padding-top: 0.2em;
+							font-weight: 600;
+							color: $primaryBlue;
+							color: #fff;
+						}
+					}
+					.right-container {
+						width: 50%;
+						display: flex;
+						justify-content: center;
+						gap: 2em;
+						align-items: center;
+						.contact-with-us {
+							padding-top: 0.2em;
+							font-weight: 600;
+							color: #fff;
+							color: $primaryBlue;
+						}
+						.social-icons {
+							.social-icon {
+								cursor: pointer;
+								color: $primaryBlue;
+								width: 20px;
+								height: 20px;
+								margin: 0 0.5em;
+							}
+							.fb {
+								color: #3b5998;
+							}
+							.insta {
+								color: #dd247b;
+							}
+							.tripadvisor {
+								color: #34e0a1;
+							}
+							.youtube {
+								color: #ff0000;
+							}
+						}
+					}
+				}
+				@media screen and (max-width: 550px) {
+					.text {
+						flex-direction: column;
+						.top-container {
+							width: 100%;
+							height: 50%;
+						}
+						.bottom-container {
+							width: 100%;
+							height: 50%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

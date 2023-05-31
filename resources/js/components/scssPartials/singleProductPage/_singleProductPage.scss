@@ -1,0 +1,173 @@
+@import './galleryWithSlider';
+@import './selectParticipants.scss/selectParticipants';
+@import './tourEvents';
+@import './itineraryFromCodepen';
+@import '../reviews';
+@import './singleProductPageCarousel';
+// Single Product Page
+.single-product-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2em;
+	// Tour Description
+	.tour-description-section {
+		// width: 84.3%;
+		.tour-heading {
+			margin-bottom: 1em;
+			display: flex;
+			flex-direction: column;
+			gap: 0.3em;
+			.number-of-days-and-address {
+				font-size: 14px;
+				font-style: italic;
+				color: grey;
+			}
+			.stars-rating {
+				align-self: flex-start;
+			}
+		}
+		@media screen and (max-width: 577px) {
+			.tour-heading {
+				margin: 0 2em;
+				margin-bottom: 1em;
+			}
+		}
+		.inner-section {
+			// display: flex;
+			// gap: 2em;
+			margin-bottom: 2em;
+			.inner-section-first-column {
+				.tour-events-section {
+					width: 100%;
+					display: flex;
+					margin-bottom: 2em;
+					.tour-events-comp {
+					}
+				}
+			}
+			.inner-section-second-column {
+				.tour-map {
+					margin-bottom: 2em;
+					overflow: hidden;
+					width: 100%;
+					height: 30em;
+					border-radius: 10px;
+					background-color: white;
+					box-shadow: 0 0 15px 5px rgb(227, 227, 227);
+				}
+				.video {
+					overflow: hidden;
+					margin-bottom: 2em;
+					border-radius: 10px;
+					height: 20em;
+					width: 100%;
+					background-color: rgb(255, 255, 255);
+					box-shadow: 0 0 15px 5px rgb(227, 227, 227);
+				}
+				.help-or-support {
+					position: -webkit-sticky; /* Safari */
+					position: sticky;
+					top: 2em;
+					border-radius: 10px;
+					height: 10em;
+					width: 100%;
+					background-color: #f79621;
+					box-shadow: 0 0 15px 5px rgb(227, 227, 227);
+					color: #fff;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					.number {
+						text-align: center;
+						font-weight: bold;
+					}
+					@media screen and (max-width: 1200px) {
+						.number {
+							font-size: 2em;
+						}
+					}
+					@media screen and (min-width: 768px) and (max-width: 992px) {
+						.number {
+							font-size: 1.5em;
+						}
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 577px) {
+			.inner-section {
+				margin: 0 1em;
+			}
+		}
+		.hr {
+			margin-bottom: 1em;
+			color: grey;
+		}
+	}
+}
+.question-wrapper {
+	width: 100%;
+	box-shadow: 0 0 15px 5px rgb(223, 222, 222);
+	padding: 2em;
+	overflow: hidden;
+	border-radius: 0.8em;
+	.itinerary-heading {
+		color: $primaryBlue;
+		font-size: $allHeadingFontSize;
+		font-weight: $allHeadingFontWeight;
+		padding: 1em 0;
+	}
+	.accordion-container {
+		width: 100%;
+		.accordion {
+			padding-right: 2em;
+			.list {
+				list-style: none;
+				width: 100%;
+				padding: 1em 0;
+				color: $primaryYellow;
+				border-bottom: 1px solid rgb(207, 207, 207);
+				label {
+					display: flex;
+					align-items: center;
+					font-size: 18px;
+					font-weight: 500;
+					cursor: pointer;
+				}
+				label::before {
+					content: '+';
+					margin-right: 10px;
+					font-size: 24px;
+					font-weight: 600;
+				}
+				input[type='radio'] {
+					display: none;
+				}
+				input[type='radio']:checked + label + .content {
+					max-height: 10000000000em;
+					padding: 10px 10px 20px;
+					transition: 0.5s;
+				}
+				input[type='radio']:checked + label::before {
+					content: '-';
+				}
+			}
+			.content {
+				color: grey;
+				padding: 0 10px;
+				line-height: 26px;
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 1s, padding 0.5s;
+				text-align: left;
+				.discription-list {
+					ul li {
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}

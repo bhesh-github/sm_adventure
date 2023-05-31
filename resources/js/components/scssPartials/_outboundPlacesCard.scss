@@ -1,0 +1,33 @@
+.top-outbound-tour-card {
+  // width: 12em;
+  // height: 13em;
+  min-height: 13em;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  .top-outbound-tour-card-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+  }
+  .top-outbound-tour-card-img:hover {
+    transform: scale(1.2);
+  }
+  .top-outbound-tour-card-place-name {
+    z-index: 1;
+    bottom: 15px;
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    position: absolute;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    align-self: center;
+    // text-align: center;
+  }
+}

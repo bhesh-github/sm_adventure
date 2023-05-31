@@ -1,0 +1,33 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+}
+body {
+	overflow-x: hidden;
+}
+
+$primaryBlue: #20558a;
+$primaryYellow: #f79621;
+$primaryGrey: #d4d4d4;
+$allHeadingFontWeight: 600;
+$allHeadingFontSize: 1.4em;
+
+@import './components/scssPartials/pages/home';
+@import './components/scssPartials/header';
+@import './components/scssPartials/footers/footers';
+@import './components/scssPartials/loadmore-btn';
+@import './components/scssPartials/singleProductPage/singleProductPage';
+@import './components/scssPartials/pages/faq';
+@import './components/scssPartials/pages/ourGallery';
+@import './components/scssPartials/pages/aboutUs';
+@import './components/scssPartials/pages/outboundPackages';
+@import './components/scssPartials/pages/contactPage';
+@import './components/scssPartials/pages/travelInfo/bookingInfo';
+@import './components/scssPartials/pages/travelInfo/generalInfo';
+@import './components/scssPartials/pages/travelInfo/visaInfo';
+@import './components/scssPartials/pages/inboundPackages';
+@import './components/scssPartials/outboundPlacesCard';
+@import './components/scssPartials/pages/blog/blog';
+@import './components/scssPartials/accordion';

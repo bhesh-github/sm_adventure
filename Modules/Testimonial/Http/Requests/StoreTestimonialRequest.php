@@ -18,6 +18,8 @@ class StoreTestimonialRequest extends FormRequest
             'name' => ['required'],
             'message' => ['required'],
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'thumbnail' => 'required_without:video',
+            'video' => 'required_without:thumbnail',
         ];
     }
 
