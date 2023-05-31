@@ -143,7 +143,7 @@
                 preview.style.display = "block";
             }
         }
-    </script>
+    </script> 
 
     <script>
         $('textarea.summernote').summernote({

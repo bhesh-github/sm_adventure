@@ -14,7 +14,7 @@ class UpdateTestimonialRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        return [ 
             'name' => ['required'],
             'message' => ['required'],
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',

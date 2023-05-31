@@ -52,7 +52,7 @@
                                                     <img src="{{ asset('upload/images/testimonials/'.$testimonial->image) }}" alt="{{ $testimonial->title }}" width="200px" class="mr-3">
                                                     <img src="" id="file-ip-1-preview" width="200px">
                                                 </div>
-                                                
+                                                 
                                             </div>
                                         </div>
                                         <div class="col-md-6">

@@ -13,7 +13,7 @@ class StoreTestimonialRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
+    { 
         return [
             'name' => ['required'],
             'message' => ['required'],

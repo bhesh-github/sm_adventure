@@ -115,7 +115,7 @@ class TestimonialController extends Controller
         {
             $filename=$request->image->getClientOriginalName();
             $imageName = time().$filename;
-
+ 
             $request->image->move(public_path('upload/images/testimonials'), $imageName);
 
         }
