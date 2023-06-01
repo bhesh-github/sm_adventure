@@ -203,12 +203,11 @@
                   <p>Images</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{ route('gallery.video.index') }}" class="nav-link {{ request()->routeIs('gallery.video.index') ? 'active' : '' }}">
-                  {{-- <i class="far fa-circle nav-icon"></i> --}}
                   <p>Videos</p>
                 </a>
-              </li>
+              </li> --}}
             </ul>
           </li>
           @endcan

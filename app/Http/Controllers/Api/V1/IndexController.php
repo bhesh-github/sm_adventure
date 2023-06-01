@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Modules\Company\Entities\Company;
 use Modules\Menu\Entities\Menu;
 use Modules\Package\Entities\Category;
 use Modules\Package\Entities\Package;
 use Modules\Slider\Entities\Slider;
+use Modules\Testimonial\Entities\Testimonial;
 
 class IndexController extends Controller
 {
@@ -43,10 +45,11 @@ class IndexController extends Controller
     {
         $category = Category::where('name','Inbound Packages')->first();
         
-        $packages = Category::where('status','on')->where('parent_id',$category->id)
-        ->with('packages', function($q){
-            $q->where('status','on')->with('images','expectations','reviews');
+        $packages = Package::where('status','on')
+        ->whereHas('category', function($q) use($category){
+            $q->where('status','on')->where('parent_id',$category->id);
         })
+        ->with('category','images','itinerary','reviews')
         ->latest()
         ->take(10)
         ->get();
@@ -59,5 +62,35 @@ class IndexController extends Controller
         $category = Category::where('name','Outbound Packages')->with('subcategories')->first();
 
         return response()->json($category);
+    }
+
+    public function testimonials()
+    {
+        $testimonials = Testimonial::where('status', 'on')->get();
+
+        return response()->json($testimonials);
+    }
+
+    public function companies()
+    {
+        $companies = Company::where('status', 'on')->get();
+
+        return response()->json($companies);
+    }
+
+    public function footerCategories()
+    {
+        $cat = Category::where('name','Inbound Packages')->first();
+
+        $categories = Category::where('status','on')->where('parent_id',$cat->id)
+        ->whereHas('packages', function($q) {
+            $q->where('status','on');
+        })
+        ->with('packages')
+        ->latest()
+        ->take(10)
+        ->get();
+
+        return response()->json($categories);
     }
 }
