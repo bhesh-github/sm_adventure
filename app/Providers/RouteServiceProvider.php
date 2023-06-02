@@ -32,6 +32,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+            ->group(module_path('Slider', '/Routes/web.php'))
+                ->group(module_path('Package', '/Routes/web.php'))
                 ->group(base_path('routes/web.php'));
         });
     }
