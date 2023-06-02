@@ -63,68 +63,6 @@ const Navbar = ({ setSidebarClass }) => {
                             </li>
                         );
                     })}
-                    {/* <li>
-                        <div
-                            className="nav-link inbound"
-                            onClick={() => {
-                                navigate("./inboundPackages");
-                            }}
-                        >
-                            <div className="dropdown">
-                                <button className="dropbtn">
-                                    Inbound Packages
-                                </button>
-                                <div className="dropdown-content">
-                                    <NavLink to="/inboundPackages">
-                                        Top Tour Packages
-                                    </NavLink>
-                                    <NavLink to="/inboundPackages">
-                                        Top Trekking Packages
-                                    </NavLink>
-                                    <NavLink to="/inboundPackages">
-                                        Mountaineering
-                                    </NavLink>
-                                    <NavLink to="/inboundPackages">
-                                        Expedition
-                                    </NavLink>
-                                    <NavLink to="/inboundPackages">
-                                        Adventure Activities
-                                    </NavLink>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className="nav-link outbound"
-                            onClick={() => {
-                                navigate("./outboundPackages");
-                            }}
-                        >
-                            <div className="dropdown">
-                                <button className="dropbtn">
-                                    Outbound Packages
-                                </button>
-                                <div className="dropdown-content">
-                                    <NavLink to="/outboundPackages">
-                                        Dubai
-                                    </NavLink>
-                                    <NavLink to="/outboundPackages">
-                                        Thailand
-                                    </NavLink>
-                                    <NavLink to="/outboundPackages">
-                                        China
-                                    </NavLink>
-                                    <NavLink to="/outboundPackages">
-                                        Indonesia
-                                    </NavLink>
-                                    <NavLink to="/outboundPackages">
-                                        Colours of Europe
-                                    </NavLink>
-                                </div>
-                            </div>
-                        </div>
-                    </li> */}
                     <li>
                         <div className="nav-link outbound">
                             <div className="dropdown">
