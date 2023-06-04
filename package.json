@@ -9,9 +9,12 @@
         "@popperjs/core": "^2.11.6",
         "@vitejs/plugin-react": "^4.0.0",
         "@vitejs/plugin-vue": "^4.0.0",
-        "axios": "^1.1.2",
+        "axios": "^1.4.0",
         "bootstrap": "^5.2.3",
+<<<<<<< HEAD
+=======
         "dotenv": "^16.1.3",
+>>>>>>> 8634d0f4b0d1b099581b28244a13fdae130baa5a
         "google-map-react": "^2.2.1",
         "laravel-vite-plugin": "^0.7.2",
         "react-datepicker": "^4.11.0",
