@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import axios from "axios";
 
+<<<<<<< HEAD
 const Navbar = ({ setSidebarClass }) => {
     const [navCategory, setNavCategory] = useState([]);
     const [navMenus, setNavMenus] = useState();
@@ -17,6 +18,17 @@ const Navbar = ({ setSidebarClass }) => {
         const menuData = await menuRes.data;
         setNavMenus(menuData[0]);
     };
+=======
+
+// import Slider from "./images/sealinks_logo.png";
+const Navbar = ({ setSidebarClass }) => {
+    const [navCategory, setNavCategory] = useState([]);
+    function getNavCategory() {
+        fetch(import.meta.env.VITE_API_BASE_URL+"/api/category")
+            .then((res) => res.json())
+            .then((data) => setNavCategory(data));
+    }
+>>>>>>> 8634d0f4b0d1b099581b28244a13fdae130baa5a
     useEffect(() => {
         fetchFunc();
     }, []);
@@ -54,12 +66,18 @@ const Navbar = ({ setSidebarClass }) => {
                                         {cat?.subcategories?.length > 0 && (
                                             <div className="dropdown-content">
                                                 {cat?.subcategories?.map(
+<<<<<<< HEAD
                                                     (sub, idx) => {
                                                         return (
                                                             <NavLink
                                                                 to="/inboundPackages"
                                                                 key={idx}
                                                             >
+=======
+                                                    (sub,idx) => {
+                                                        return (
+                                                            <NavLink key={idx} to="/inboundPackages">
+>>>>>>> 8634d0f4b0d1b099581b28244a13fdae130baa5a
                                                                 {sub?.name}
                                                             </NavLink>
                                                         );
