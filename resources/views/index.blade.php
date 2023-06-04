@@ -4,8 +4,12 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+		<!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+		<link rel="icon" href="https://sealinkstravel.com/wp-content/uploads/2020/02/sealinks1.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Free Web tutorials">
+  		<meta name="keywords" content="HTML, CSS, JavaScript">
+  		<meta name="title" content="Sealinks Holidays">
 		<meta name="theme-color" content="#000000" />
 		<meta
 			name="description"
