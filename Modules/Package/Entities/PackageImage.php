@@ -11,6 +11,12 @@ class PackageImage extends Model
 
     protected $fillable = [];
     protected $guarded = [];
+    protected $appends = ['image_link'];
+
+    public function getImageLinkAttribute()
+    {
+       return asset("upload/images/package/".$this->image);
+    }
     
     protected static function newFactory()
     {

@@ -27,6 +27,12 @@ class User extends Authenticatable
         'role_id',
         'status'
     ];
+    protected $appends = ['image_link'];
+
+    public function getimageLinkAttribute()
+    {
+       return asset("upload/images/users/".$this->image);
+    }
 
     function role(){
         return $this->hasOne(Role::class,'id','role_id');

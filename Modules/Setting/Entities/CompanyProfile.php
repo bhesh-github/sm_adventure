@@ -33,6 +33,24 @@ class CompanyProfile extends Model
         'meta_description',
         'meta_keywords'
     ];
+    protected $appends = ['logo_link','footer_logo_link','favicon_link','image_link'];
+
+    public function getLogoLinkAttribute()
+    {
+       return asset("upload/images/settings/".$this->image);
+    }
+    public function getFooterLogoLinkAttribute()
+    {
+       return asset("upload/images/settings/".$this->footer_logo);
+    }
+    public function getfaviconLinkAttribute()
+    {
+       return asset("upload/images/settings/".$this->favicon);
+    }
+    public function getimageLinkAttribute()
+    {
+       return asset("upload/images/settings/".$this->image);
+    }
     
     protected static function newFactory()
     {

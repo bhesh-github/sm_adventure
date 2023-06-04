@@ -11,6 +11,17 @@ class Testimonial extends Model
 
     protected $fillable = [];
     protected $guarded=[];
+    protected $appends = ['image_link','thumbnail_link'];
+
+    public function getimageLinkAttribute()
+    {
+       return asset("upload/images/testimonials/".$this->image);
+    }
+
+    public function getThumbnailLinkAttribute()
+    {
+       return asset("upload/images/testimonials/".$this->thumbnail);
+    }
 
     protected static function newFactory()
     {

@@ -11,6 +11,12 @@ class Vacancy extends Model
 
     protected $fillable = [];
     protected $guarded = [];
+    protected $appends = ['image_link'];
+
+    public function getimageLinkAttribute()
+    {
+       return asset("upload/images/vacancies/".$this->image);
+    }
 
     protected static function newFactory()
     {

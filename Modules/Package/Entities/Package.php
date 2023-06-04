@@ -11,6 +11,7 @@ class Package extends Model
 
     protected $fillable = [];
     protected $guarded = [];
+    protected $appends = ['image_link'];
 
     function category(){
         return $this->belongsTo(Category::class);
@@ -30,6 +31,11 @@ class Package extends Model
 
     function expectations(){
         return $this->hasMany(PackageExpectation::class,'package_id','id');
+    }
+
+    public function getImageLinkAttribute()
+    {
+       return asset("upload/images/package/".$this->thumbnail);
     }
     
     protected static function newFactory()

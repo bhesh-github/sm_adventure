@@ -11,6 +11,12 @@ class Company extends Model
 
     protected $fillable = [];
     protected $guarded = [];
+    protected $appends = ['image_link'];
+
+    public function getImageLinkAttribute()
+    {
+       return asset("upload/images/company/".$this->image);
+    }
     
     protected static function newFactory()
     {

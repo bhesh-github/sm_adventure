@@ -11,9 +11,15 @@ class Gallery extends Model
 
     protected $fillable = [];
     protected $guarded = [];
+    protected $appends = ['image_link'];
 
     function galleryImages(){
         return $this->hasMany(GalleryImages::class,'gallery_id','id');
+    }
+
+    public function getImageLinkAttribute()
+    {
+       return asset("upload/images/gallery/".$this->image);
     }
     
     protected static function newFactory()

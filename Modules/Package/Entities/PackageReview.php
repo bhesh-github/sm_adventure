@@ -11,6 +11,12 @@ class PackageReview extends Model
 
     protected $fillable = [];
     protected $guarded = [];
+    protected $appends = ['image_link'];
+
+    public function getImageLinkAttribute()
+    {
+       return asset("upload/images/review/".$this->image);
+    }
     
     protected static function newFactory()
     {
