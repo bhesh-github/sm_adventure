@@ -11,6 +11,7 @@ class Category extends Model
 
     protected $fillable = [];
     protected $guarded = [];
+    protected $appends = ['image_link'];
 
     function category(){
         return $this->belongsTo(Category::class,'parent_id','id');
@@ -22,6 +23,11 @@ class Category extends Model
 
     function packages(){
         return $this->hasMany(Package::class,'category_id','id');
+    }
+
+    public function getImageLinkAttribute()
+    {
+       return asset("upload/images/category/".$this->image);
     }
     
     protected static function newFactory()

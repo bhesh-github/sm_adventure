@@ -3,11 +3,12 @@ import { NavLink, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 
+
 // import Slider from "./images/sealinks_logo.png";
 const Navbar = ({ setSidebarClass }) => {
     const [navCategory, setNavCategory] = useState([]);
     function getNavCategory() {
-        fetch("http://localhost:8000/api/category")
+        fetch(import.meta.env.VITE_API_BASE_URL+"/api/category")
             .then((res) => res.json())
             .then((data) => setNavCategory(data));
     }
@@ -32,9 +33,9 @@ const Navbar = ({ setSidebarClass }) => {
                             Home
                         </NavLink>
                     </li>
-                    {navCategory?.map((cat) => {
+                    {navCategory?.map((cat, idx) => {
                         return (
-                            <li>
+                            <li key={idx}>
                                 <div
                                     className="nav-link inbound"
                                     onClick={() => {
@@ -48,9 +49,9 @@ const Navbar = ({ setSidebarClass }) => {
                                         {cat?.subcategories?.length > 0 && (
                                             <div className="dropdown-content">
                                                 {cat?.subcategories?.map(
-                                                    (sub) => {
+                                                    (sub,idx) => {
                                                         return (
-                                                            <NavLink to="/inboundPackages">
+                                                            <NavLink key={idx} to="/inboundPackages">
                                                                 {sub?.name}
                                                             </NavLink>
                                                         );
